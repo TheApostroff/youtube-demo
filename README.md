@@ -1,73 +1,110 @@
-# React + TypeScript + Vite
+# YouTube Mini 🎬
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, feature-rich YouTube clone built with React, TypeScript, and Tailwind CSS. This project demonstrates clean architecture principles, modern UI/UX design, and responsive web development.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🎨 Modern UI/UX
+- **Tailwind CSS**: Sleek, utility-first styling with a premium dark mode
+- **Responsive Design**: Mobile-first approach with adaptive layouts (1-4 column grid)
+- **Glassmorphism**: Modern design aesthetics with smooth transitions and hover effects
+- **Lucide React Icons**: Beautiful, consistent iconography
 
-## React Compiler
+### 🔐 Authentication
+- **Mock Authentication System**: Login/Signup with form validation
+- **Session Persistence**: User state saved in localStorage
+- **User Menu**: Dropdown with profile, settings, and logout options
+- **Protected Routes**: Seamless authentication flow
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🎥 Video Features
+- **Video Feed**: Browse videos with rich metadata (views, dates, channel info)
+- **Video Player Page**: Dedicated page with player, description, comments, and related videos
+- **Search Functionality**: Real-time search with query parameters
+- **Click Navigation**: Seamless routing between pages
 
-## Expanding the ESLint configuration
+### 🎛️ Core Functionality
+- **Dark/Light Theme**: Toggle between themes with persistence
+- **Collapsible Sidebar**: Responsive navigation with smooth animations
+- **Clean Architecture**: Separation of concerns (Domain, Infrastructure, Presentation)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerequisites
+- Node.js 16+ and npm
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# Clone the repository
+git clone https://github.com/TheApostroff/youtube-demo.git
+cd youtube-demo
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Build for Production
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+## 🏗️ Project Structure
+
+```
+src/
+├── core/
+│   ├── domain/        # Business entities (Video, User)
+│   └── usecases/      # Application logic
+├── infrastructure/
+│   ├── api/           # API clients
+│   ├── data/          # Mock data
+│   └── repositories/  # Data access layer
+├── presentation/
+│   ├── components/    # Reusable UI components
+│   ├── layouts/       # Page layouts
+│   ├── pages/         # Route pages
+│   └── styles/        # Component styles
+└── shared/
+    └── utils.ts       # Shared utilities
+```
+
+## 🧪 Tech Stack
+
+- **React 19** - UI library
+- **TypeScript** - Type safety
+- **Vite** - Build tool
+- **Tailwind CSS v4** - Styling
+- **React Router** - Navigation
+- **Lucide React** - Icons
+
+## 🎯 Demo Credentials
+
+Use any email and password (minimum 6 characters) to test the authentication system.
+
+Example:
+- Email: `demo@example.com`
+- Password: `password123`
+
+## 📝 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+## 🙏 Acknowledgments
+
+- Inspired by YouTube's clean and intuitive interface
+- Built as a learning project to demonstrate modern React development practices
